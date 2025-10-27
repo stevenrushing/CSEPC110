@@ -21,3 +21,5 @@ print(f"The area of the rectangle is {area_of_rectangle(length, height):.4f}")
 radius = int(input("What is the radius of the circle? "))
 
 print(f"The area of the circle is: {area_of_circle(radius):.4f}")
+
+# This is a test
