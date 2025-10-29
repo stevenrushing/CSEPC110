@@ -1,5 +1,4 @@
 # To show creativity I looped the game at the bottom so you can choose to play over and over. I also included an option to play 5, 6, or 7 word games, and included lists for each.
-# The rubric was unclear on whether I should "count" guesses where the number of letters guessed was incorrect, or simply prompt for a word with the correct number of letters. Here I do not count them, but I could if it were required. 
 
 five_letter_word_list = [
     "faith", "grace", "choir", "saint", "angel", 
@@ -8,6 +7,8 @@ five_letter_word_list = [
     "cross", "nephi", "mulek", "laman", "bread", 
     "light", "heart", "trust", "works", "sarah"
 ]
+
+# five_letter_word_list = ["jesus"]
 
 six_letter_word_list = [
     "church", "bishop", "spirit", "gospel", "prayer", 
@@ -51,13 +52,14 @@ def initialize_guess(num_letters):
     else:
         return list("       ")
 
-def get_guess(num_letters):
+def get_guess(num_letters, counter):
     guess = list(input("What is your guess? ").lower())
     while len(guess) != num_letters:
         print("Sorry, the guess must have the same number of letters as the secret word.")
+        counter += 1
         print()
         guess = list(input("What is your guess? ").lower())
-    return guess
+    return guess, counter
 
 def show_hint(hint_list):
     place_holder = ""
@@ -101,7 +103,9 @@ def game_loop():
     while guess != secret_word:
         counter += 1
         print(show_hint(hint))
-        guess = get_guess(num_letters)
+        guess = get_guess(num_letters, counter)
+        counter = guess[1]
+        guess = guess[0]
         hint = calc_hint(secret_word, guess)
 
     print("Congratulations! You guessed it!")
