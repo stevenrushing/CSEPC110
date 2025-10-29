@@ -1,19 +1,4 @@
-# Welcome to the word guessing game!
-
-# Your hint is: _ _ _ _ _ _ 
-# What is your guess? abcdefghijklmnopqrstuvwxyz
-# Sorry, the guess must have the same number of letters as the secret word.
-
-# Your hint is: _ _ _ _ _ _ 
-# What is your guess? temple
-# Your hint is: _ _ m _ _ _ 
-# What is your guess? moroni
-# Your hint is: M O _ o _ i 
-# What is your guess? hhhhhh
-# Your hint is: h h h h h H 
-# What is your guess? mosiah
-# Congratulations! You guessed it!
-# It took you 6 guesses.
+# To show creativity I looped the game at the bottom so you can choose to play over and over. I also included an option to play 5, 6, or 7 word games, and included lists for each.
 
 five_letter_word_list = [
     "faith", "grace", "choir", "saint", "angel", 
@@ -51,34 +36,56 @@ def game_start():
 def generate_word(num_letters):
     word = ""
     if num_letters == 5:
-        return choice(five_letter_word_list)
+        return list(choice(five_letter_word_list))
     elif num_letters == 6:
-        return choice(six_letter_word_list)
+        return list(choice(six_letter_word_list))
     else:
-        return choice(seven_letter_word_list)
+        return list(choice(seven_letter_word_list))
 
 def initialize_guess(num_letters):
     if num_letters == 5:
-        return "     "
+        return list("     ")
     elif num_letters == 6:
-        return "      "
+        return list("      ")
     else:
-        return "       "
+        return list("       ")
 
 def get_guess(num_letters):
-    guess = input("What is your guess? ")
+    guess = list(input("What is your guess? ").lower())
     while len(guess) != num_letters:
         print("Sorry, the guess must have the same number of letters as the secret word.")
         print()
-        guess = input("What is your guess? ")
+        guess = list(input("What is your guess? ").lower())
     return guess
 
+def show_hint(hint_list):
+    place_holder = ""
+    for i in hint_list:
+        if i == " ":
+            place_holder += "_"
+            place_holder += " "
+        else:
+            place_holder += i
+            place_holder += " "
+    return f"Your hint is: {place_holder}"
 
-def show_hint(secret_word, guess):
-    new_guess = guess
+def calc_hint(secret_word, guess):
+    counter = 0
+    place_holder = []
+    for i in range(len(secret_word)):
+        place_holder += " "
+
     for i in guess:
         for j in secret_word:
+            if i == j:
+                place_holder[counter] = i
+        counter += 1        
 
+    for i in range(len(guess)):
+        if guess[i] == secret_word[i]:
+            place_holder[i] = guess[i].capitalize()
+
+    return place_holder
 
 def game_loop():
     num_letters = game_start()
@@ -86,13 +93,18 @@ def game_loop():
     secret_word = generate_word(num_letters)
 
     guess = initialize_guess(num_letters)
+    hint = guess
 
     counter = 0
 
     while guess != secret_word:
-
+        counter += 1
+        print(show_hint(hint))
         guess = get_guess(num_letters)
+        hint = calc_hint(secret_word, guess)
 
+    print("Congratulations! You guessed it!")
+    print(f"It took you {counter} guesses.")
 
     # show hint
 
@@ -102,6 +114,10 @@ def game_loop():
 
     # congratulations
 
-
-
-print(get_guess(7))
+play_game = "yes"
+while play_game == "yes":
+    game_loop()
+    print()
+    play_game = input("Would you like to play again? yes/no ").lower()
+    while play_game != "yes" and play_game != "no":
+        play_game = input("Please type YES or NO: ").lower()
