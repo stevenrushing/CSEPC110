@@ -25,7 +25,7 @@ def disp_cart(cart_list, price_list):
     print("The contents of the shopping cart are: ")
     display = ""
     for i in range(len(cart_list)):
-        display += f"{i+1}. {cart_list[i]}     ${price_list[i]}\n"
+        display += f"{i+1}. {cart_list[i]}     ${float(price_list[i]):.2f}\n"
     print(display)
 
 def rem_cart(cart_list, price_list, old_items):
