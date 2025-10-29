@@ -1,4 +1,5 @@
 # To show creativity I looped the game at the bottom so you can choose to play over and over. I also included an option to play 5, 6, or 7 word games, and included lists for each.
+# The rubric was unclear on whether I should "count" guesses where the number of letters guessed was incorrect, or simply prompt for a word with the correct number of letters. Here I do not count them, but I could if it were required. 
 
 five_letter_word_list = [
     "faith", "grace", "choir", "saint", "angel", 
