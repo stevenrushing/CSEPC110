@@ -1,0 +1,34 @@
+
+    Add a new item
+
+    Display the contents of the shopping cart
+
+    Remove an item (only needed for the final project deliverable)
+
+    Compute the total (only needed for the final project deliverable)
+
+    Quit
+
+
+What item would you like to add? socks
+What is the price of 'socks'? 5.99
+'socks' has been added to the cart.
+
+The contents of the shopping cart are:
+1. bed - $100.00
+2. chair - $24.99
+3. blanket - $48.50
+
+The contents of the shopping cart are:
+1. bed - $100.00
+2. chair - $24.99
+3. blanket - $48.50
+4. hat - $26.54
+5. pan - $30.00
+
+Which item would you like to remove? 3
+Item removed.
+
+
+
+The total price of the items in the shopping cart is $35.68
