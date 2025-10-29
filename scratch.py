@@ -31,14 +31,25 @@
 #     if guess[i] == secret[i]:
 #         place_holder[i] = guess[i].capitalize()
 
-# print(place_holder)
+# # print(place_holder)
 
-def get_guess(num_letters):
-    guess = list(input("What is your guess? ").lower())
-    while len(guess) != num_letters:
-        print("Sorry, the guess must have the same number of letters as the secret word.")
-        print()
-        guess = list(input("What is your guess? ").lower())
-    return guess
+# def get_guess(num_letters):
+#     guess = list(input("What is your guess? ").lower())
+#     while len(guess) != num_letters:
+#         print("Sorry, the guess must have the same number of letters as the secret word.")
+#         print()
+#         guess = list(input("What is your guess? ").lower())
+#     return guess
 
-get_guess(5)
+# get_guess(5)
+
+# client_list = []
+# client_list += "mary"
+# client_list.append("John")
+# print(client_list)
+
+x = 5
+
+x =+ 1
+
+print(x)
