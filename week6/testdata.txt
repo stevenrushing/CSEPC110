@@ -1,0 +1,26 @@
+Entity,Code,Year,Life expectancy (years)
+Afghanistan,AFG,1950,27.638
+Afghanistan,AFG,1951,27.878
+Afghanistan,AFG,1952,28.361
+Afghanistan,AFG,1953,28.852
+Afghanistan,AFG,1954,29.35
+China,CHN,1950,32
+China,CHN,1951,34
+China,CHN,1952,35
+China,CHN,1953,37
+China,CHN,1954,41
+India,IND,1950,25.4424
+India,IND,1951,24.266399
+India,IND,1952,23.4856
+India,IND,1953,23.98
+India,IND,1954,23.1464
+Tanzania,TZA,1950,40.063
+Tanzania,TZA,1951,40.316
+Tanzania,TZA,1952,40.805
+Tanzania,TZA,1953,41.261
+Tanzania,TZA,1954,41.683
+Netherlands,NLD,1950,39.84
+Netherlands,NLD,1951,39.990002
+Netherlands,NLD,1952,38.639999
+Netherlands,NLD,1953,38.619999
+Netherlands,NLD,1954,38.619999
